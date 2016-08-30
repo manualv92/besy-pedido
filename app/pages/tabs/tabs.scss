@@ -1,0 +1,20 @@
+ion-navbar > .toolbar-background{
+    border-color: #b2b2b2;
+    background: #387ef5;
+}
+
+ion-title {
+	padding: 0;
+}
+
+.toolbar-title {
+	padding: 0 12px;
+	font-size: 2rem;
+	font-weight: 500;
+	color: #fff;
+	text-align: left;
+}
+
+.back-button .button-inner {
+	color: white !important;
+}

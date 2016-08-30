@@ -1,0 +1,83 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Rendiciones</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding class="rendiciones2">
+
+	<ion-list>
+		<ion-item-group *ngFor="let instance of instances">
+
+			<ion-item-divider sticky *ngIf="instance.print">
+				{{instance.receptionTime | date:'d/MM'}}
+			</ion-item-divider>
+
+			<ion-item-sliding>
+				<button ion-item (click)="goToRendicion(instance)">
+					<div style="display:flex;">
+						<h3 style="flex: 1 0 auto;margin-top:0;">{{instance.author.name}}</h3>
+						<span style="flex: 0 0 auto">Solicitud: {{instance.numeroSolicitud}}</span>
+					</div>
+					<p>
+						<span>ARS {{instance.montoTotal}}</span>
+					</p>
+				</button>
+
+				<ion-item-options>
+					<button favorite (click)="evaluate(instance)">
+						Aprobar
+					</button>
+					<button danger (click)="goToRechazo(instance)">
+						Rechazar
+					</button>
+				</ion-item-options>
+			</ion-item-sliding>
+
+		</ion-item-group>
+
+	</ion-list>
+
+
+
+	<!--ion-list>
+		<div *ngFor="let process of processes">
+			<ion-item-group *ngFor="let activity of process.activities">
+				
+				<div *ngFor="let instance of activity.instances; let i = index">
+					
+
+					<ion-item-divider *ngIf="i == 0" light>
+						{{instance.recivedDate.dia}}/{{instance.recivedDate.mes}}/{{instance.recivedDate.anio}}
+					</ion-item-divider>
+
+					<ion-item-sliding #slidingItem>
+					<button ion-item (click)="goToRendicion(instance)">
+						<p>
+							{{instance.description}}
+						</p>
+					</button>
+
+					<ion-item-options>
+						<button favorite>
+							Aprobar
+						</button>
+						<button danger>
+							Rechazar
+						</button>
+					</ion-item-options>
+
+				</ion-item-sliding>
+				</div>
+
+			</ion-item-group>
+		</div>
+	</ion-list-->
+	
+</ion-content>
+
+<ion-footer>
+	<ion-footer>
+		<ion-title>Besysoft</ion-title>
+	</ion-footer>
+</ion-footer>

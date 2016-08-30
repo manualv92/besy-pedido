@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Rendicion</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <h2>{{rendicion.author.name}}</h2>
+  <h4>Solicitud: {{rendicion.numeroSolicitud}}</h4>
+
+   <ion-card *ngIf="rendicion" class="rendicion">
+
+    <ion-card-header class="item-title">Gastos Ingresados:</ion-card-header>
+
+    <ion-card-content>
+
+      <ion-grid class="rendicion-grid">
+        <ion-row center>
+          <ion-col width-33>
+            <ion-label class="item-title">Fecha</ion-label>
+          </ion-col>
+          <ion-col width-33>
+            <ion-label class="item-title">Concepto</ion-label>
+          </ion-col>
+          <ion-col width-33>
+            <ion-label class="item-title">Monto</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngFor="let rax of rendicion.data" class="rendicion-list">
+        <ion-row center>
+          <ion-col width-33>
+            <ion-label>{{rax.fecha | date: 'dd/MM'}}</ion-label>
+          </ion-col>
+          <ion-col width-33>
+            <ion-label>{{rax.concepto}}</ion-label>
+          </ion-col>
+          <ion-col width-33>
+            <ion-label>ARS {{rax.monto}}</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    <ion-grid class="rendicion-grid-total">
+      <ion-row center>
+        <ion-col width-33>
+          <ion-label class="item-title"></ion-label>
+        </ion-col>
+        <ion-col width-33>
+          <ion-label class="item-title">Total</ion-label>
+        </ion-col>
+        <ion-col width-33>
+          <ion-label class="item-title">ARS {{rendicion.montoTotal}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  
+
+  <ion-grid>
+    <ion-row center>
+      <ion-col width-50>
+        <button class="rendicion-grid-button" danger button (click)="goToRechazo()">
+          Rechazar
+        </button>
+      </ion-col>
+      <ion-col width-50>
+        <button class="rendicion-grid-button" button (click)="evaluate($event)">
+          Aprobar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

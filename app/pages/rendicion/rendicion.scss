@@ -1,0 +1,37 @@
+.rendicion {
+	margin: 0;
+	width: calc(100%);
+	.item-title {
+    	font-weight: 600;
+	}
+
+	.rendicion-grid {
+	    border-style: solid;
+	    border-bottom-width: 1px;
+	    border-bottom-color: black;
+	    border-top-width: 0;
+	    border-left-width: 0;
+	    border-right-width: 0;
+	}
+
+	.rendicion-grid-total {
+		.item-title{
+			font-weight: 600;
+		}
+	}
+
+	.rendicion-list {
+	    border-color: lightblue;
+	    border-width: 1px;
+	    border-style: solid;
+	    border-left-width: 0;
+	    border-right-width: 0;
+	    ion-label {
+		    margin: 0px 8px 0px 0;
+		}
+	}
+
+	.rendicion-grid-button {
+		margin: 0 20%;
+	}
+}
