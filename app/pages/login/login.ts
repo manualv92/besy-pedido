@@ -25,11 +25,14 @@ export class LoginPage {
 
   submit(event:Event) {
     event.defaultPrevented;
+    /*
     this.user.authenticate(this.username.value, this.password.value).subscribe(
       res => this.user.isLoged = res,
       err => this.alertError(err),
       ()  => this.navCtrl.setRoot(TabsPage)
     );
+  */
+  this.navCtrl.setRoot(TabsPage);
   }
 
   alertError(msj) {

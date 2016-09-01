@@ -1,0 +1,42 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Clientes</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding class="rendiciones">
+
+	<ion-list>
+		<ion-item-group *ngFor="let cliente of clientes">
+			<ion-item-sliding>
+				<button ion-item (click)="goToRendicion(cliente)">
+					<div style="display:flex;">
+						<h3 style="flex: 1 0 auto;margin-top:0;">{{cliente.nombre}} {{cliente.apellido}}</h3>
+						<span style="flex: 0 0 auto">Empresa: {{cliente.empresa}}</span>
+					</div>
+					<p>
+						<span>Direccion: {{cliente.direccion}}</span>
+					</p>
+				</button>
+
+				<ion-item-options>
+					<button danger (click)="borrarCliente(cliente)">
+						Borrar
+					</button>
+				</ion-item-options>
+			</ion-item-sliding>
+		</ion-item-group>
+
+	</ion-list>
+
+	<ion-list-header [hidden]="clientes.length > 0">
+		No hay clientes.
+	</ion-list-header>
+	
+</ion-content>
+
+<ion-footer>
+  <ion-footer>
+    <ion-title>Besysoft</ion-title>
+  </ion-footer>
+</ion-footer>
