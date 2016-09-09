@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
-import {Platform, ionicBootstrap} from 'ionic-angular';
+import {Platform, ionicBootstrap, Storage, LocalStorage } from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {LoginPage} from './pages/login/login';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { UserService } from './services/UserService';
+import { ClientService } from './services/ClientService';
 import { ExtendedHttp } from './services/ExtendedHttp';
 
 @Component({
@@ -12,6 +13,7 @@ import { ExtendedHttp } from './services/ExtendedHttp';
 export class MyApp {
 
   private rootPage: any;
+  public local:any;
 
   constructor(private platform: Platform) {
     this.rootPage = LoginPage;
@@ -20,6 +22,10 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
+
+      this.local = new Storage(LocalStorage);
+      this.local.set('mok', true);
+
     });
   }
 }
@@ -28,5 +34,6 @@ ionicBootstrap(MyApp, [
   disableDeprecatedForms(),
   provideForms(),
   ExtendedHttp,
-  UserService]
+  UserService,
+  ClientService]
  );
