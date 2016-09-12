@@ -1,0 +1,43 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Productos</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding class="rendiciones">
+
+	<ion-list>
+		<ion-item-group *ngFor="let producto of productos">
+			<ion-item-sliding>
+				<button ion-item>
+					<div style="display:flex;">
+						<h3 style="flex: 1 0 auto;margin-top:0;">{{producto.denominacion}}</h3>
+						<span style="flex: 0 0 auto">ARS: {{producto.precio}}</span>
+					</div>
+				</button>
+
+				<ion-item-options>
+					<button danger (click)="borrarProducto(producto)">
+						Borrar
+					</button>
+				</ion-item-options>
+			</ion-item-sliding>
+		</ion-item-group>
+
+	</ion-list>
+
+	<ion-list-header [hidden]="productos.length > 0">
+		No hay productos.
+	</ion-list-header>
+
+	<button button (click)="goToProductoCreate()">
+      Crear Producto
+    </button>
+	
+</ion-content>
+
+<ion-footer>
+  <ion-footer>
+    <ion-title>Besysoft</ion-title>
+  </ion-footer>
+</ion-footer>

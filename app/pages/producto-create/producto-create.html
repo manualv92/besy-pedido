@@ -1,0 +1,27 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Crear Producto</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<form [formGroup]="authForm" (submit)="crearProducto()">
+		  <ion-item>
+		    <ion-label fixed>Denominación</ion-label>
+		    <ion-input type="text" formControlName="denominacion"></ion-input>
+		  </ion-item>
+
+		  <ion-item>
+		    <ion-label fixed>Precio</ion-label>
+		    <ion-input type="text" formControlName="precio"></ion-input>
+		  </ion-item>
+		<button secondary type="submit">Crear Producto</button>
+	</form>
+
+</ion-content>
+
+<ion-footer>
+  <ion-footer>
+    <ion-title>Besysoft</ion-title>
+  </ion-footer>
+</ion-footer>

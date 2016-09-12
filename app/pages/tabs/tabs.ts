@@ -3,6 +3,8 @@ import {HomePage} from '../home/home';
 import {ContactPage} from '../contact/contact';
 import {RendicionesPage2} from '../rendiciones2/rendiciones2';
 import {ClientesPage} from '../clientes/clientes';
+import {ProductosPage} from '../productos/productos';
+
 
 
 @Component({
@@ -19,6 +21,6 @@ export class TabsPage {
     // should be each tab's root Page
     this.tab1Root = HomePage;
     this.tab2Root = ClientesPage;
-    this.tab3Root = ContactPage;
+    this.tab3Root = ProductosPage;
   }
 }

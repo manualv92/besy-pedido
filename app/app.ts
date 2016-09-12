@@ -5,6 +5,7 @@ import {LoginPage} from './pages/login/login';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { UserService } from './services/UserService';
 import { ClientService } from './services/ClientService';
+import { ProductService } from './services/ProductService';
 import { ExtendedHttp } from './services/ExtendedHttp';
 
 @Component({
@@ -23,9 +24,6 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
 
-      this.local = new Storage(LocalStorage);
-      this.local.set('mok', true);
-
     });
   }
 }
@@ -35,5 +33,6 @@ ionicBootstrap(MyApp, [
   provideForms(),
   ExtendedHttp,
   UserService,
-  ClientService]
+  ClientService,
+  ProductService]
  );
