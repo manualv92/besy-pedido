@@ -4,13 +4,16 @@ import {NavController, LoadingController, NavParams} from 'ionic-angular';
 import {ProductoCreatePage} from '../producto-create/producto-create';
 import {ExtendedHttp} from './../../services/ExtendedHttp';
 import {ProductService} from './../../services/ProductService';
+import {ItemFilter} from './../../pipes/ItemFilter';
 import {Producto} from '../../models/Producto';
 
 @Component({
-	templateUrl: 'build/pages/productos/productos.html'
+	templateUrl: 'build/pages/productos/productos.html',
+	pipes: [ItemFilter]
 })
 export class ProductosPage {
 
+	filtroString: String = "";
 	productos: Array<Producto> = [];
 
 	constructor(private navCtrl: NavController, private loading: LoadingController,

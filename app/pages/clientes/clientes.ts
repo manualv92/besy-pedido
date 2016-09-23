@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, LoadingController, NavParams} from 'ionic-angular';
 //import {RendicionPage} from '../rendicion/rendicion';
 import {ClienteCreatePage} from '../cliente-create/cliente-create';
+import {PedidoCreatePage} from '../pedido-create/pedido-create';
 import {ExtendedHttp} from './../../services/ExtendedHttp';
 import {ClientService} from './../../services/ClientService';
 import {Cliente} from '../../models/Cliente';
@@ -44,6 +45,11 @@ export class ClientesPage {
 	goToClienteCreate(cliente) {
 		this.navCtrl.push(ClienteCreatePage,{
 			clientes: this.clientes
+		});
+	}
+	goToPedidoCreate(cliente) {
+		this.navCtrl.push(PedidoCreatePage,{
+			cliente: cliente
 		});
 	}
 }

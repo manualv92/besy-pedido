@@ -13,9 +13,4 @@ export class Cliente {
 		this.direccion = direccion;
 		this.empresa = empresa;
 	}
-
-	logout() {
-		StorageUtils.removeToken();
-	}
-
 }

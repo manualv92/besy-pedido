@@ -5,9 +5,9 @@
 </ion-header>
 
 <ion-content padding class="rendiciones">
-
+	<ion-searchbar [(ngModel)]="filtroString"></ion-searchbar>
 	<ion-list>
-		<ion-item-group *ngFor="let producto of productos">
+		<ion-item-group *ngFor="let producto of (productos | itemFilter:filtroString)">
 			<ion-item-sliding>
 				<button ion-item>
 					<div style="display:flex;">
@@ -18,6 +18,7 @@
 
 				<ion-item-options>
 					<button danger (click)="borrarProducto(producto)">
+					<ion-icon name="close-circle"></ion-icon>
 						Borrar
 					</button>
 				</ion-item-options>
@@ -30,7 +31,7 @@
 		No hay productos.
 	</ion-list-header>
 
-	<button button (click)="goToProductoCreate()">
+	<button button block (click)="goToProductoCreate()">
       Crear Producto
     </button>
 	

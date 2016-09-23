@@ -21,9 +21,16 @@
 
 				<ion-item-options>
 					<button danger (click)="borrarCliente(cliente)">
+					<ion-icon name="close-circle"></ion-icon>
 						Borrar
 					</button>
 				</ion-item-options>
+				<ion-item-options side="left">
+			      	<button primary (click)="goToPedidoCreate(cliente)">
+			        	<ion-icon name="cart"></ion-icon>
+			        	Pedido
+			      	</button>
+			    </ion-item-options>
 			</ion-item-sliding>
 		</ion-item-group>
 

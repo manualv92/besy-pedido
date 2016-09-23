@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Crear Pedido</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="home">
+  <h4>{{cliente.nombre}} {{cliente.apellido}}, Empresa: {{cliente.empresa}}</h4>
+  <h6>Productos: </h6>
+  <ion-searchbar [(ngModel)]="filtroString"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let producto of (productosModificados | itemFilter:filtroString)">
+      <ion-label>{{producto.denominacion}}</ion-label>
+      <ion-checkbox [(ngModel)]="producto.active" (click)="checkboxChange($event, producto)"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <button button block (click)="crearPedido()">
+    Crear Pedido
+  </button>
+</ion-content>

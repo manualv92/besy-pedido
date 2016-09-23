@@ -5,13 +5,7 @@ import {AlertController} from 'ionic-angular';
 import 'rxjs/Rx';
 import {ExtendedHttp} from './ExtendedHttp';
 import {Producto} from '../models/Producto';
-
-
-//
-
 import {Storage, LocalStorage} from 'ionic-angular';
-
-//
 
 @Injectable()
 export class ProductService {
@@ -30,13 +24,13 @@ export class ProductService {
 			this.local.get('products').then( products => {
 				console.log(products)
 				if(products == null) {
-					this.productos.push(new Producto("Lapicera","10"));
-					this.productos.push(new Producto("Boligoma","20"));
-					this.productos.push(new Producto("Lapices de color","40"));
-					this.productos.push(new Producto("Resma A4","100"));
+					this.productos.push(new Producto("Lapicera",10));
+					this.productos.push(new Producto("Boligoma",20));
+					this.productos.push(new Producto("Lapices de color",40));
+					this.productos.push(new Producto("Resma A4",100));
 					console.log(JSON.stringify(this.productos))
 					this.local.set('products' ,  JSON.stringify(this.productos));
-					products = this.productos
+					products = JSON.stringify(this.productos);
 				} 
 				observer.next(JSON.parse(products))
 				observer.complete()

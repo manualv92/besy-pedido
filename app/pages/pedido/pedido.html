@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Pedido</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <h2>{{pedido.cliente.nombre}} {{pedido.cliente.apellido}}</h2>
+  <h4>Empresa: {{pedido.cliente.empresa}}</h4>
+
+   <ion-card *ngIf="pedido" class="rendicion">
+
+    <ion-card-header class="item-title">Productos:</ion-card-header>
+
+    <ion-card-content>
+
+      <ion-grid class="pedido-grid">
+        <ion-row center>
+          <ion-col width-50>
+            <ion-label class="item-title">Denominación</ion-label>
+          </ion-col>
+          <ion-col width-50>
+            <ion-label class="item-title">Precio</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngFor="let prod of pedido.productos" class="productos-list">
+        <ion-row center>
+          <ion-col width-50>
+            <ion-label>{{prod.denominacion}}</ion-label>
+          </ion-col>
+          <ion-col width-50>
+            <ion-label>ARS {{prod.precio}}</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    <ion-grid class="pedido-grid-total">
+      <ion-row center>
+        <ion-col width-50>
+          <ion-label class="item-title">Total</ion-label>
+        </ion-col>
+        <ion-col width-50>
+          <ion-label class="item-title">ARS {{pedido.montoTotal}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  
+
+  <!--ion-grid>
+    <ion-row center>
+      <ion-col width-50>
+        <button class="rendicion-grid-button" danger button (click)="goToRechazo()">
+          Rechazar
+        </button>
+      </ion-col>
+      <ion-col width-50>
+        <button class="rendicion-grid-button" button (click)="evaluate($event)">
+          Aprobar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid-->
+</ion-content>

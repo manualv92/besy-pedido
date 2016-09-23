@@ -6,6 +6,7 @@ import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { UserService } from './services/UserService';
 import { ClientService } from './services/ClientService';
 import { ProductService } from './services/ProductService';
+import { PedidoService } from './services/PedidoService';
 import { ExtendedHttp } from './services/ExtendedHttp';
 
 @Component({
@@ -34,5 +35,6 @@ ionicBootstrap(MyApp, [
   ExtendedHttp,
   UserService,
   ClientService,
-  ProductService]
+  ProductService,
+  PedidoService]
  );

@@ -4,6 +4,7 @@ import {ContactPage} from '../contact/contact';
 import {RendicionesPage2} from '../rendiciones2/rendiciones2';
 import {ClientesPage} from '../clientes/clientes';
 import {ProductosPage} from '../productos/productos';
+import {PedidosPage} from '../pedidos/pedidos';
 
 
 
@@ -15,6 +16,7 @@ export class TabsPage {
   private tab1Root: any;
   private tab2Root: any;
   private tab3Root: any;
+  private tab4Root: any;
 
   constructor() {
     // this tells the tabs component which Pages
@@ -22,5 +24,6 @@ export class TabsPage {
     this.tab1Root = HomePage;
     this.tab2Root = ClientesPage;
     this.tab3Root = ProductosPage;
+    this.tab4Root = PedidosPage;
   }
 }

@@ -34,9 +34,10 @@ export class ClientService {
 					this.clientes.push(new Cliente("Leonardo","Zielinski","Pilar","Besysoft"));
 					this.clientes.push(new Cliente("Diego","Medina","Moreno","Besysoft"));
 					this.clientes.push(new Cliente("Mariano","Lista","Pilar","Besysoft"));
-					console.log(JSON.stringify(this.clientes))
+					console.log(JSON.stringify(this.clientes));
 					this.local.set('clientes' ,  JSON.stringify(this.clientes));
-					clients = this.clientes
+					clients = JSON.stringify(this.clientes);
+					console.log(clients);
 				} 
 				observer.next(JSON.parse(clients))
 				observer.complete()
