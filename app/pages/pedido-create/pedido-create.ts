@@ -1,6 +1,7 @@
 import {Component, Pipe, PipeTransform} from '@angular/core';
 import {NavController, LoadingController, NavParams} from 'ionic-angular';
 import {ProductoCreatePage} from '../producto-create/producto-create';
+import {PedidosPage} from '../pedidos/pedidos';
 import {ExtendedHttp} from './../../services/ExtendedHttp';
 import {PedidoService} from './../../services/PedidoService';
 import {ProductService} from './../../services/ProductService';
@@ -56,6 +57,8 @@ export class PedidoCreatePage{
 		this.pedidos.push(new Pedido(this.cliente,this.productosSeleccionados));
 		console.log(this.pedidos);
 		this.pedidoServ.setPedidos(this.pedidos);
-		this.navCtrl.pop();
+		this.navCtrl.push( PedidosPage, {
+			pedidos: this.pedidos
+		});
 	}
 }

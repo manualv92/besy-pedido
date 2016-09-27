@@ -15,6 +15,9 @@ export class PedidosPage {
 
 	constructor(private navCtrl: NavController, private loading: LoadingController,
 		private params: NavParams, private pedidoServ: PedidoService, private http: ExtendedHttp) {
+		if(this.params.get('pedidos')){
+			this.pedidos = this.params.get('pedidos');
+		}
 		console.log(this.pedidos);
 	}
 

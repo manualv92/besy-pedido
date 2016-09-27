@@ -3,6 +3,7 @@ import {NavController, LoadingController, NavParams} from 'ionic-angular';
 //import {RendicionPage} from '../rendicion/rendicion';
 import {ClienteCreatePage} from '../cliente-create/cliente-create';
 import {PedidoCreatePage} from '../pedido-create/pedido-create';
+import {ClientePage} from '../cliente/cliente';
 import {ExtendedHttp} from './../../services/ExtendedHttp';
 import {ClientService} from './../../services/ClientService';
 import {Cliente} from '../../models/Cliente';
@@ -52,4 +53,10 @@ export class ClientesPage {
 			cliente: cliente
 		});
 	}
+	goToCliente(cliente) {
+		this.navCtrl.push(ClientePage,{
+			cliente: cliente
+		});
+	}
+
 }

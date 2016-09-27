@@ -4,13 +4,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="home">
+<ion-content padding class="pedido">
   <h2>{{pedido.cliente.nombre}} {{pedido.cliente.apellido}}</h2>
   <h4>Empresa: {{pedido.cliente.empresa}}</h4>
 
-   <ion-card *ngIf="pedido" class="rendicion">
+   <ion-card *ngIf="pedido">
 
-    <ion-card-header class="item-title">Productos:</ion-card-header>
+    <ion-card-header>Productos:</ion-card-header>
 
     <ion-card-content>
 

@@ -9,7 +9,7 @@
 	<ion-list>
 		<ion-item-group *ngFor="let cliente of clientes">
 			<ion-item-sliding>
-				<button ion-item>
+				<button ion-item (click)="goToCliente(cliente)">
 					<div style="display:flex;">
 						<h3 style="flex: 1 0 auto;margin-top:0;">{{cliente.nombre}} {{cliente.apellido}}</h3>
 						<span style="flex: 0 0 auto">Empresa: {{cliente.empresa}}</span>
@@ -40,7 +40,7 @@
 		No hay clientes.
 	</ion-list-header>
 
-	<button button (click)="goToClienteCreate()">
+	<button button block (click)="goToClienteCreate()">
       Crear Cliente
     </button>
 	

@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, LoadingController, NavParams} from 'ionic-angular';
 //import {RendicionPage} from '../rendicion/rendicion';
 import {ProductoCreatePage} from '../producto-create/producto-create';
+import {ProductoPage} from '../producto/producto';
 import {ExtendedHttp} from './../../services/ExtendedHttp';
 import {ProductService} from './../../services/ProductService';
 import {ItemFilter} from './../../pipes/ItemFilter';
@@ -39,6 +40,11 @@ export class ProductosPage {
 	goToProductoCreate(producto) {
 		this.navCtrl.push(ProductoCreatePage,{
 			productos: this.productos
+		});
+	}
+	goToProducto(producto) {
+		this.navCtrl.push(ProductoPage,{
+			producto: producto
 		});
 	}
 }

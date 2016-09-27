@@ -1,0 +1,29 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Detalle de Cliente</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding class="cliente">
+	<ion-card>
+	  <ion-card-header>
+	    {{cliente.nombre}} {{cliente.apellido}}
+	  </ion-card-header>
+
+	  <ion-list>
+	    <ion-item>
+	      Empresa: {{cliente.empresa}}
+	    </ion-item>
+
+	    <ion-item>
+	      Dirección: {{cliente.direccion}}
+	    </ion-item>
+	  </ion-list>
+	</ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-footer>
+    <ion-title>Besysoft</ion-title>
+  </ion-footer>
+</ion-footer>

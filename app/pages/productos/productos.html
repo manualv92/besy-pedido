@@ -9,7 +9,7 @@
 	<ion-list>
 		<ion-item-group *ngFor="let producto of (productos | itemFilter:filtroString)">
 			<ion-item-sliding>
-				<button ion-item>
+				<button ion-item (click)="goToProducto(producto)">
 					<div style="display:flex;">
 						<h3 style="flex: 1 0 auto;margin-top:0;">{{producto.denominacion}}</h3>
 						<span style="flex: 0 0 auto">ARS: {{producto.precio}}</span>
